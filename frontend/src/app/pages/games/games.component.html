@@ -1,0 +1,47 @@
+<h1>GameVault</h1>
+
+<form (ngSubmit)="save()">
+    <input [(ngModel)]="game.title" name="title" placeholder="Nome do jogo">
+    <input [(ngModel)]="game.genre" name="genre" placeholder="Gênero">
+    <input [(ngModel)]="game.platform" name="platform" placeholder="Plataforma">
+    <input [(ngModel)]="game.rating" name="rating" placeholder="Nota">
+
+    <button type="submit">
+        Salvar
+    </button>
+</form>
+
+<div class="games_grid">
+    @for(
+        game of games;
+        track game.id
+    ) {
+        <div class="game_card">
+            <h3>
+                {{ game.title }}
+            </h3>
+
+            <p>
+                {{ game.genre }}
+            </p>
+            
+            <p>
+                {{ game.platform }}
+            </p>
+
+            <strong>
+                {{ game.rating }}
+            </strong>
+
+            <div class="actions">
+                <button (click)="edit(game)">
+                    Editar
+                </button>
+
+                <button (click)="remove(game.id!)">
+                    Excluir
+                </button>
+            </div>
+        </div>
+    }
+</div>
