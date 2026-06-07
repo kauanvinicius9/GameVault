@@ -1,0 +1,41 @@
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 24px;
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+input {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.games_grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.game_card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.08);
+}

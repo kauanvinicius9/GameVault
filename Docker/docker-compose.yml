@@ -1,15 +1,25 @@
 services:
 
-  Back-End:
-    build: ../Back-End
+  backend:
+    build: ../backend
+    container_name: gamevault-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
 
-  Front-End:
-    build: ../Front-End
-    
-  mongodb:
+  frontend:
+    build: ../frontend
+    container_name: gamevault-web
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+  mongo:
     image: mongo:8
     container_name: gamevault-mongo
-
+    restart: always
     ports:
       - "27017:27017"
 
@@ -20,5 +30,5 @@ services:
     volumes:
       - mongo_data:/data/db
 
-  volumes:
-    mongo_data:
+volumes:
+  mongo_data:
