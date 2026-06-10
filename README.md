@@ -153,7 +153,7 @@ Run `Back-End`
   <img src="https://skillicons.dev/icons?i=sass" height="40" alt="sass logo" title="SCSS" />
   <img width="1" />
   <img src="https://skillicons.dev/icons?i=angular" height="40" alt="angularjs logo" title="Angular" />
-  <img width="12" />
+  <img width="1" />
   <img src="https://skillicons.dev/icons?i=docker" height="40" alt="docker logo" title="Docker" />
   <img width="1" />
   <img src="https://skillicons.dev/icons?i=powershell" height="40" alt="powershell logo" title="Powershell" />
