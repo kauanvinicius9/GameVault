@@ -89,7 +89,7 @@ Stylesheet? SCSS
 
 **Stage 4 - MongoDB + Docker**
 
-```docker
+```dockerfile
 services:
 
   mongodb:
