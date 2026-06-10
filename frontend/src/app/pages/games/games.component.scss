@@ -1,3 +1,30 @@
+$color-brand-primary: #6c7a7b;
+$color-brand-secondary: #7f8c8d;
+
+$color-surface-emphasis: #2c3e50;
+$color-interactive-primary: #34495e;
+
+$color-background-default: #f4f6f8;
+$color-surface-muted: #ffffff;
+
+$color-border-accent: #d9e1e8;
+$color-status: #e74c3c;
+
+$color-text-primary: #1f2937;
+$color-text-secondary: #6b7280;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $color-background-default;
+    color: $color-text-primary;
+    font-family: Inter, sans-serif;
+}
+
 .container {
     max-width: 1200px;
     margin: 40px auto;
@@ -5,37 +32,96 @@
 }
 
 h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
     margin-bottom: 24px;
+    color: $color-text-primary;
 }
 
 form {
+    background: $color-surface-muted;
+    border: 1px solid $color-border-accent;
+    border-radius: 16px;
+    padding: 20px;
     display: grid;
     gap: 12px;
     margin-bottom: 32px;
 }
 
 input {
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #d1d5db;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid $color-border-accent;
+    border-radius: 10px;
+    background: white;
+    font-size: .95rem;
+    transition: .2s ease;
+
+    &:focus {
+        outline: none;
+        border-color: $color-brand-primary;
+    }
 }
 
 button {
-    cursor: pointer;
+    width: fit-content;
+    padding: 12px 18px;
     border: none;
-    border-radius: 12px;
-    padding: 12px;
+    border-radius: 10px;
+    background: $color-interactive-primary;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .2s ease;
+
+    &:hover {
+        opacity: .92;
+    }
 }
 
 .games_grid {
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
 }
 
 .game_card {
     background: white;
+    border: 1px solid $color-border-accent;
+    border-radius: 16px;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .04);
+    transition: .2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+    }
+
+    h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    p {
+        color: $color-text-secondary;
+        font-size: .9rem;
+        margin-bottom: 4px;
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.btn-danger {
+    background: $color-status;
+
+    &:hover {
+        opacity: .9;
+    }
 }
