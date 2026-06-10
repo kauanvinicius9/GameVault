@@ -2,9 +2,9 @@
 
 ###
 
-**Etapa 1 - Instalações**
+**Stage 1 - Installs**
 
-Validações de ambiente
+Environments
 
 ```bash
 JDK 21
@@ -46,7 +46,7 @@ ng version
 
 ---
 
-**Etapa 2 - Criação do Back-End**
+**Stage 2 - Create Back-End**
 
 Access: [https://start.spring.io](https://start.spring.io)
 
@@ -72,7 +72,7 @@ gamevault/backend
 
 ---
 
-**Etapa 3 - Criação Front-End**
+**Stage 3 - Create Front-End**
 
 ```bash
 ng new frontend
@@ -87,7 +87,7 @@ Stylesheet? SCSS
 
 ---
 
-**Etapa 4 - MongoDB + Docker**
+**Stage 4 - MongoDB + Docker**
 
 ```docker
 services:
@@ -114,7 +114,7 @@ volumes:
 docker compose up -d
 ```
 
-**Etapa 4 - Connect Spring to Mongo**
+**Stage 5 - Connect Spring to Mongo**
 
 application.yml
 
@@ -127,7 +127,7 @@ spring:
 
 ---
 
-**Etapa 5 - Run**
+**Stage 6 - Run**
 
 Run `Front-End`
 
