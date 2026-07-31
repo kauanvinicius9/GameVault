@@ -13,6 +13,8 @@ $color-status: #e74c3c;
 $color-text-primary: #1f2937;
 $color-text-secondary: #6b7280;
 
+$font-family: Inter, sans-serif;
+
 * {
     margin: 0;
     padding: 0;
@@ -22,11 +24,15 @@ $color-text-secondary: #6b7280;
 body {
     background: $color-background-default;
     color: $color-text-primary;
-    font-family: Inter, sans-serif;
+    font-family: $font-family;
 }
 
 .container {
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
     margin: 40px auto;
     padding: 24px;
 }
@@ -36,6 +42,11 @@ h1 {
     font-weight: 600;
     margin-bottom: 24px;
     color: $color-text-primary;
+    font-family: Inter, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 form {
@@ -64,13 +75,12 @@ input {
 }
 
 button {
-    width: fit-content;
+    width: 100%;
     padding: 12px 18px;
     border: none;
     border-radius: 10px;
     background: $color-interactive-primary;
     color: white;
-    font-weight: 500;
     cursor: pointer;
     transition: .2s ease;
 
@@ -124,4 +134,12 @@ button {
     &:hover {
         opacity: .9;
     }
+}
+
+.error-message {
+    color: $color-status;
+    padding: 12px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-family: $font-family;
 }
