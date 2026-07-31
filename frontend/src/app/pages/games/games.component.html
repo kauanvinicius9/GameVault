@@ -1,12 +1,33 @@
 <h1>GameVault</h1>
 
-<form (ngSubmit)="save()">
-    <input [(ngModel)]="game.title" name="title" placeholder="Nome do jogo">
-    <input [(ngModel)]="game.genre" name="genre" placeholder="Gênero">
-    <input [(ngModel)]="game.platform" name="platform" placeholder="Plataforma">
-    <input [(ngModel)]="game.rating" name="rating" placeholder="Nota">
+<form (ngSubmit)="save()" class="container">
+    <input [(ngModel)]="game.title" name="title"  #title="ngModel" required type="text" minlength="3" placeholder="Nome do jogo">
+    @if (title.touched && title.invalid) {
+        <span class="error-message">Informe o nome do jogo</span>
+    }
 
-    <button type="submit">
+    <input [(ngModel)]="game.genre" name="genre" #genre="ngModel" required type="text" minlength="3" placeholder="Gênero">
+    @if (genre.touched && genre.invalid) {
+        <span class="error-message">Informe o gênero do jogo</span>
+    }
+
+    <input [(ngModel)]="game.platform" name="platform" #platform="ngModel" required type="text" minlength="3" placeholder="Plataforma">
+    @if (platform.touched && platform.invalid) {
+        <span class="error-message">Informe a plataforma do jogo</span>
+    }
+
+    <input [(ngModel)]="game.rating" name="rating" #rating="ngModel" required type="number" min="1" max="10" placeholder="Nota">
+    @if (rating.touched && rating.invalid) {
+        <span class="error-message">Dê uma nota de 01 a 10</span>
+    }
+
+    @if (errorMessage) {
+        <div class="error-message">
+            {{ errorMessage }}
+        </div>
+    }
+
+    <button type="submit" [disabled]="!game.title.trim() || !game.genre.trim() || !game.platform.trim() || game.rating < 1 || game.rating > 10">
         Salvar
     </button>
 </form>
