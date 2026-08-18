@@ -1,55 +1,5 @@
 # GameVault
 
-###
-
-**Stage 1 - Installs**
-
-Environments
-
-```bash
-JDK 21
-```
-
-```bash
-java --version
-```
-
-```bash
-Apache Maven 3.9
-```
-
-```bash
-mvn --version
-```
-
-```bash
-Node 22
-```
-
-```bash
-node --version
-```
-
-```bash
-npm --version
-```
-
-**Terminal:**
-
-```bash
-npm install -g @angular/cli
-```
-
-```bash
-ng version
-```
-
----
-
-**Stage 2 - Create Back-End**
-
-Access: [https://start.spring.io](https://start.spring.io)
-
 Dependences:
 
 - Spring Wb;
@@ -66,19 +16,7 @@ Configurations:
 - **Group**: br.com.gamevault;
 - **Artifact**: backend.
 
-Install and Extract:
-
-gamevault/backend
-
 ---
-
-**Stage 3 - Create Front-End**
-
-```bash
-ng new frontend
-```
-
-> Questions
 
 ```bash
 Routing? Yes
@@ -86,8 +24,6 @@ Stylesheet? SCSS
 ```
 
 ---
-
-**Stage 4 - MongoDB + Docker**
 
 ```dockerfile
 services:
@@ -110,56 +46,9 @@ volumes:
   mongo_data:
 ```
 
-```bash
-docker compose up -d
-```
-
-**Stage 5 - Connect Spring to Mongo**
-
-application.yml
-
 ```yml
 spring:
   data:
     mongodb:
       uri: mongodb://admin:admin@localhost:27017/gamevault?authSource=admin
 ```
-
----
-
-**Stage 6 - Run**
-
-Run `Front-End`
-
-```bash
-ng serve
-```
-
-Run `Back-End`
-
-```bash
-.\mvnw.cmd sprint-boot:run
-```
-
-<div align="left">
-  <img src="https://skillicons.dev/icons?i=mongodb" height="40" alt="mongodb logo" title="MongoDB" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=spring" height="40" alt="spring logo" title="Spring" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=java" height="40" alt="java logo" title="Java" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=ts" height="40" alt="typescript logo" title="TypeScript" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=sass" height="40" alt="sass logo" title="SCSS" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=angular" height="40" alt="angularjs logo" title="Angular" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=docker" height="40" alt="docker logo" title="Docker" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=powershell" height="40" alt="powershell logo" title="Powershell" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=maven" height="40" alt="apachemaven logo" title="Apache Maven" />
-</div>
-
-
-
