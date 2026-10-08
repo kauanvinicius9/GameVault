@@ -1,19 +1,19 @@
-import { GameService } from '../../../core/services/game.service';
-import { Game } from '../../shared/interfaces/game.interface';
-import { OnInit, Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { GameService } from "../../../core/services/game.service";
+import { Game } from "../../shared/interfaces/game.interface";
+import { OnInit, Component } from '@angular/core";
+import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-games',
+  selector: "app-games",
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './games.component.html',
-  styleUrls: ['./games.component.scss'],
+  templateUrl: "./games.component.html",
+  styleUrls: ["./games.component.scss"],
 })
 export class GamesComponent implements OnInit {
   games: Game[] = [];
-  game: Game = { title: '', genre: '', platform: '', rating: 0 };
-  errorMessage = '';
+  game: Game = { title: "", genre: "", platform: "", rating: 0 };
+  errorMessage = "";
 
   editingId: string | null = null;
   constructor(private gameService: GameService) {}
@@ -26,10 +26,11 @@ export class GamesComponent implements OnInit {
     this.gameService.getAll().subscribe({
       next: (data) => {
         this.games = data;
-        this.errorMessage = '';
+        this.errorMessage = "";
       },
+      
       error: (error: any) => {
-        this.errorMessage = 'Erro ao carregar jogos';
+        this.errorMessage = "Erro ao carregar jogos";
         console.error(error);
       },
     });
@@ -41,8 +42,9 @@ export class GamesComponent implements OnInit {
         next: () => {
           this.resetForm();
         },
+        
         error: (error: any) => {
-          this.errorMessage = 'Erro ao atualizar jogo';
+          this.errorMessage = "Erro ao atualizar jogo";
           console.error(error);
         },
       });
@@ -52,10 +54,11 @@ export class GamesComponent implements OnInit {
     this.gameService.create(this.game).subscribe({
       next: () => {
         this.resetForm();
-        this.errorMessage = '';
+        this.errorMessage = "";
       },
+      
       error: (error: any) => {
-        this.errorMessage = 'Erro ao cadastrar jogo';
+        this.errorMessage = "Erro ao cadastrar jogo";
         console.error(error);
       },
     });
@@ -70,17 +73,18 @@ export class GamesComponent implements OnInit {
     this.gameService.delete(id).subscribe({
       next: () => {
         this.loadGames();
-        this.errorMessage = '';
+        this.errorMessage = "";
       },
+      
       error: (error: any) => {
-        this.errorMessage = 'Erro ao remover jogo';
+        this.errorMessage = "Erro ao remover jogo";
         console.error(error);
       },
     });
   }
 
   resetForm() {
-    this.game = { title: '', genre: '', platform: '', rating: 0 };
+    this.game = { title: "", genre: "", platform: "", rating: 0 };
     this.editingId = null;
     this.editingId = null;
     this.loadGames();
