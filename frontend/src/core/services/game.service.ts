@@ -3,10 +3,10 @@ import { Injectable } from "@angular/core";
 import { Game } from "../../app/shared/interfaces/game.interface";
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: "root"
 })
 export class GameService {
-    private readonly api = 'http://localhost:8000/games';
+    private readonly api = "http://localhost:8000/games";
 
     constructor(
         private http: HttpClient
