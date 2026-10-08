@@ -1,22 +1,4 @@
-# GameVault
-
-Dependences:
-
-- Spring Wb;
-- Spring Data MongoDB;
-- Validation;
-- Lombok.
-
-Configurations:
-
-- **Project**: Maven;
-- **Language**: Java;
-- **Spring Boot**: 3.5.x;
-- **Java**: 21;
-- **Group**: br.com.gamevault;
-- **Artifact**: backend.
-
----
+## GameVault
 
 ```bash
 Routing? Yes
